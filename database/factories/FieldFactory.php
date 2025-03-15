@@ -1,11 +1,12 @@
-<?php
+<?php // database/factories/FieldFactory.php
 
 namespace Database\Factories;
 
+use App\Models\Field;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Field>
+ * @extends Factory<Field>
  */
 class FieldFactory extends Factory
 {
