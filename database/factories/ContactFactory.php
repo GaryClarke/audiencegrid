@@ -18,7 +18,8 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'email' => $this->faker->unique()->safeEmail,
+            'region' => strtoupper($this->faker->randomElement(['US', 'CA', 'GB', 'AU']))
         ];
     }
 }

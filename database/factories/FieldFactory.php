@@ -18,7 +18,8 @@ class FieldFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'key' => $this->faker->word,
+            'value' => $this->faker->sentence(2),
         ];
     }
 }
