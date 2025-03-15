@@ -19,6 +19,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/contacts/{contact}/fields', [ContactFieldController::class, 'show'])
         ->name('contacts.fields.show');
+
+    Route::put('/contacts/{contact}/fields', [ContactFieldController::class, 'update'])
+        ->name('contacts.fields.update');
 });
 
 require __DIR__.'/auth.php';
