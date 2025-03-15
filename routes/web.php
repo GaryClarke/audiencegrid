@@ -1,4 +1,4 @@
-<?php
+<?php // routes/web.php
 
 use App\Http\Controllers\ContactFieldController;
 use App\Http\Controllers\ProfileController;
