@@ -12,6 +12,16 @@ class Contact extends Model
     /** @use HasFactory<ContactFactory> */
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'email',
+        'region',
+    ];
+
     public function fields(): HasMany
     {
         return $this->hasMany(Field::class);
