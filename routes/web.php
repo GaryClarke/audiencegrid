@@ -1,5 +1,6 @@
 <?php // routes/web.php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactFieldController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::get('/contacts/{contact}/fields', [ContactFieldController::class, 'show'])
         ->name('contacts.fields.show');
 

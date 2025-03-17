@@ -1,8 +1,11 @@
-<x-app-layout>
+<x-app-layout> {{--resources/views/contacts/fields/show.blade.php--}}
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Contact Fields') }}
+            {{ __('Edit Contact') }}
         </h2>
+        <a href="{{ route('contacts.index') }}" class="text-sm text-indigo-600 hover:underline">
+            {{ __('Back to Contacts') }}
+        </a>
     </x-slot>
 
     <div class="py-12">

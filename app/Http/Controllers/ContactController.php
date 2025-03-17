@@ -1,4 +1,4 @@
-<?php
+<?php // app/Http/ContactController.php
 
 declare(strict_types=1);
 
@@ -8,9 +8,17 @@ use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\View\View;
 
 class ContactController extends Controller
 {
+    public function index(): View
+    {
+        $contacts = Contact::all();
+
+        return view('contacts.index', ['contacts' => $contacts]);
+    }
+
     public function store(Request $request): JsonResponse
     {
         // Log the incoming request payload
