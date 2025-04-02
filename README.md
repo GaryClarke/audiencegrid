@@ -1,66 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# AudienceGrid
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+AudienceGrid is a mock CRM-style service built with Laravel. It is designed to receive and store structured data sent from a separate Laravel microservice. This application is part of the **Laravel Microservice** course.
 
-## About Laravel
+👉 [Check out the full course here](https://www.garyclarke.tech/p/laravel-microservice)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🔗 Purpose
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This application simulates a real-world third-party API or CRM that would receive subscription lifecycle events or user data from a microservice.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+It works alongside the [Laravel Microservice](https://github.com/GaryClarke/laravel-microservice) application to demonstrate service-to-service communication, HTTP forwarding, and data storage in a decoupled system.
 
-## Learning Laravel
+## 🧰 Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Laravel
+- Tailwind CSS (via Vite + Laravel Breeze)
+- SQLite (local development)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🧪 Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Receives incoming POST requests from the microservice
+- Logs and stores contact and event data
+- Displays contact fields via a simple Blade UI
+- Uses a single route for tracking events (`/track`)
 
-## Laravel Sponsors
+## 🚀 Getting Started
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Clone the repo:
 
-### Premium Partners
+```bash
+git clone https://github.com/GaryClarke/audiencegrid.git
+cd audiencegrid
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Install dependencies:
 
-## Contributing
+```bash
+composer install
+npm install && npm run dev
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Set up the environment:
 
-## Code of Conduct
+```bash
+php artisan key:generate
+touch database/database.sqlite
+php artisan migrate --seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Run the server:
 
-## Security Vulnerabilities
+```bash
+php artisan serve --port=8005
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+This app is designed to run on port `8005` while the Laravel Microservice runs on `8000`.
 
-## License
+## 📚 Part of a Video Course
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This repository accompanies the [**Laravel Microservice** course by Gary Clarke](https://www.garyclarke.tech). Each branch corresponds to a different lesson in the course.
+
+🔗 [View the full course](https://www.garyclarke.tech/p/laravel-microservice)
+
+## 🤝 License
+
+This project is open-source and free to use for educational purposes.
